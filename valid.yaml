@@ -1,0 +1,12 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: ayaka-ikezawa-pipeline-run-
+spec:
+  pipelineRef:
+    name: ayaka-ikezawa-pipeline
+  workspaces:
+    - name: pipeline-shared-data
+      persistentVolumeClaim:
+        claimName: ayaka-ikezawa-pvc
